@@ -21,7 +21,7 @@ router.post("/", upload.single("shipPhoto"), async (req, res) => {
   try {
     const entry = new Customers({
       ...req.body,
-      shipPhoto: req.file.buffer, // save image as Buffer
+      shipPhoto: req.file.buffer, // save image as Buffers
     });
 
     await entry.save();
